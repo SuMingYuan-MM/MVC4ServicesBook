@@ -40,7 +40,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
     <Compile Include="DateTimeAdapter.cs" />
     <Compile Include="IDateTime.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
