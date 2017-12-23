@@ -245,12 +245,15 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     <Compile Include="App_Start\NinjectConfigurator.cs" />
 <<<<<<< HEAD
     <Compile Include="App_Start\NinjectWebCommon.cs" />
 =======
     <Compile Include="App_Start\NinjectDependencyResolver.cs" />
 >>>>>>> 8efa8a90410547de06a68807e5454b5c951c050b
+=======
+>>>>>>> parent of 1970976... add data models prepare for ninject
 =======
 >>>>>>> parent of 1970976... add data models prepare for ninject
 =======

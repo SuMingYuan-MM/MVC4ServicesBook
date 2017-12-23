@@ -49,6 +49,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     <Compile Include="IVersionedModelObject.cs" />
 =======
 >>>>>>> 8efa8a90410547de06a68807e5454b5c951c050b
@@ -57,6 +58,9 @@
     <Compile Include="Model\Status.cs" />
     <Compile Include="Model\Task.cs" />
     <Compile Include="Model\User.cs" />
+=======
+    <Compile Include="Class1.cs" />
+>>>>>>> parent of 1970976... add data models prepare for ninject
 =======
     <Compile Include="Class1.cs" />
 >>>>>>> parent of 1970976... add data models prepare for ninject
