@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MVC4ServicesBook.Common
+namespace MVC4ServicesBook.Data
 {
-    public interface IExceptionMessageFormatter
+    public class Class1
     {
-        string GetEntireExceptionStack(Exception ex);
     }
 }

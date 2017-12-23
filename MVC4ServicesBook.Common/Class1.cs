@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MVC4ServicesBook.Data
+namespace MVC4ServicesBook.Common
 {
-    public interface IVersionedModelObject
+    public class Class1
     {
-        byte[] Version { get; set; }
     }
 }

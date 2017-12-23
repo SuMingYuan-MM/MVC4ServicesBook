@@ -41,14 +41,15 @@
   </ItemGroup>
   <ItemGroup>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <Compile Include="DatabaseValueParser.cs" />
 =======
 >>>>>>> 8efa8a90410547de06a68807e5454b5c951c050b
+=======
+    <Compile Include="Class1.cs" />
+>>>>>>> parent of 1970976... add data models prepare for ninject
     <Compile Include="DateTimeAdapter.cs" />
-    <Compile Include="ExceptionMessageFormatter.cs" />
-    <Compile Include="IDatabaseValueParser.cs" />
     <Compile Include="IDateTime.cs" />
-    <Compile Include="IExceptionMessageFormatter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
