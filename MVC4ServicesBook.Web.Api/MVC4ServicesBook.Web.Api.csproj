@@ -282,6 +282,16 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="HttpFetchers\HttpCategoryFetcher.cs" />
+    <Compile Include="HttpFetchers\HttpPriorityFetcher.cs" />
+    <Compile Include="HttpFetchers\HttpStatusFetcher.cs" />
+    <Compile Include="HttpFetchers\HttpTaskFetcher.cs" />
+    <Compile Include="HttpFetchers\HttpUserFetcher.cs" />
+    <Compile Include="HttpFetchers\IHttpCategoryFetcher.cs" />
+    <Compile Include="HttpFetchers\IHttpPriorityFetcher.cs" />
+    <Compile Include="HttpFetchers\IHttpStatusFetcher.cs" />
+    <Compile Include="HttpFetchers\IHttpTaskFetcher.cs" />
+    <Compile Include="HttpFetchers\IHttpUserFetcher.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -289,6 +299,8 @@
     <Compile Include="Providers\ApplicationOAuthProvider.cs" />
     <Compile Include="Results\ChallengeResult.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="TypeMappers\CategoryMapper.cs" />
+    <Compile Include="TypeMappers\ICategoryMapper.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\HelpPage\HelpPage.css" />
@@ -367,6 +379,10 @@
     <ProjectReference Include="..\MVC4ServicesBook.Common\MVC4ServicesBook.Common.csproj">
       <Project>{3e7aca54-adfd-4f81-ac87-f3eba1cec632}</Project>
       <Name>MVC4ServicesBook.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MVC4ServicesBook.Data.SqlServer\MVC4ServicesBook.Data.SqlServer.csproj">
+      <Project>{F5866530-35E9-453B-B4B6-50649581FEB6}</Project>
+      <Name>MVC4ServicesBook.Data.SqlServer</Name>
     </ProjectReference>
     <ProjectReference Include="..\MVC4ServicesBook.Data\MVC4ServicesBook.Data.csproj">
       <Project>{55cfeed7-23cc-4b95-a52d-7dfff1339052}</Project>

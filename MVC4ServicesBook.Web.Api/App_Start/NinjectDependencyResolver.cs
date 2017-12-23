@@ -6,7 +6,7 @@ using System.Web;
 using System.Web.Http.Dependencies;
 using Ninject;
 
-namespace MVC4ServicesBook.Web.Api.App_Start
+namespace MVC4ServicesBook.Web.Api
 {
     public class NinjectDependencyResolver:IDependencyResolver
     {

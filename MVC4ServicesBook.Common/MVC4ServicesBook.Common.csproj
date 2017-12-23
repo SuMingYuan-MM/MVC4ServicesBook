@@ -40,7 +40,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DatabaseValueParser.cs" />
     <Compile Include="DateTimeAdapter.cs" />
+    <Compile Include="IDatabaseValueParser.cs" />
     <Compile Include="IDateTime.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
