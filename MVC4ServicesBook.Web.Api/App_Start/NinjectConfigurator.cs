@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Http;
+<<<<<<< HEAD
 using FluentNHibernate.Cfg.Db;
 using log4net;
 using MVC4ServicesBook.Common;
@@ -22,25 +23,58 @@ namespace MVC4ServicesBook.Web.Api
     public class NinjectConfigurator
     {
         /// <summary>
+=======
+using Ninject;
+using  Ninject.Web.Common;
+
+#pragma warning disable 1587
+
+namespace MVC4ServicesBook.Web.Api.App_Start
+{
+    /// <summary>
+    /// Class used to set up the Ninject DI container
+    /// </summary>
+    public class NinjectConfigurator
+    {
+        ///<summary>
+>>>>>>> 8efa8a90410547de06a68807e5454b5c951c050b
         /// Entry method used by caller to configure the given
         /// container with all of this application's 
         /// dependencies. Also configures the container as this
         /// application's dependency resolver.
         /// </summary>
+<<<<<<< HEAD
         /// <param name="container"></param>
         public void Configure(IKernel container)
         {
             // Add all binding/dependencies
             AddBindings(container);
 
+=======
+        public void Configure(IKernel container)
+        {
+            //Add all bindings/dependencies
+            AddBindings(container);
+
+            //Use the container and our NinjectDependencyResolver as
+            //application's resolver
+>>>>>>> 8efa8a90410547de06a68807e5454b5c951c050b
             var resolver = new NinjectDependencyResolver(container);
             GlobalConfiguration.Configuration.DependencyResolver = resolver;
         }
 
+<<<<<<< HEAD
+=======
+        /// <summary>
+        /// Add all bindings/dependencies to the container
+        /// </summary>
+        /// <param name="container"></param>
+>>>>>>> 8efa8a90410547de06a68807e5454b5c951c050b
         private void AddBindings(IKernel container)
         {
             ConfigureNHibernate(container);
 
+<<<<<<< HEAD
             ConfigureLog4net(container);
 
             container.Bind<IDateTime>().To<DateTimeAdapter>();
@@ -108,6 +142,14 @@ namespace MVC4ServicesBook.Web.Api
                 CurrentSessionContext.Bind(session);
             }
             return sessionFactory.GetCurrentSession();
+=======
+            throw new NotImplementedException();
+        }
+
+        private void ConfigureNHibernate(IKernel container)
+        {
+            throw new NotImplementedException();
+>>>>>>> 8efa8a90410547de06a68807e5454b5c951c050b
         }
     }
 }

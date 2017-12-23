@@ -40,7 +40,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
     <Compile Include="IVersionedModelObject.cs" />
+=======
+>>>>>>> 8efa8a90410547de06a68807e5454b5c951c050b
     <Compile Include="Model\Category.cs" />
     <Compile Include="Model\Priority.cs" />
     <Compile Include="Model\Status.cs" />

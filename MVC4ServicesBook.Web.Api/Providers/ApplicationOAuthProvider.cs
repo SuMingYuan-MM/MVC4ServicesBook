@@ -27,7 +27,7 @@ namespace MVC4ServicesBook.Web.Api.Providers
             _publicClientId = publicClientId;
         }
 
-        public override async Task GrantResourceOwnerCredentials(OAuthGrantResourceOwnerCredentialsContext context)
+        public override async System.Threading.Tasks.Task GrantResourceOwnerCredentials(OAuthGrantResourceOwnerCredentialsContext context)
         {
             var userManager = context.OwinContext.GetUserManager<ApplicationUserManager>();
 
@@ -40,7 +40,7 @@ namespace MVC4ServicesBook.Web.Api.Providers
             }
 
             ClaimsIdentity oAuthIdentity = await user.GenerateUserIdentityAsync(userManager,
-               OAuthDefaults.AuthenticationType);
+                OAuthDefaults.AuthenticationType);
             ClaimsIdentity cookiesIdentity = await user.GenerateUserIdentityAsync(userManager,
                 CookieAuthenticationDefaults.AuthenticationType);
 
@@ -50,17 +50,17 @@ namespace MVC4ServicesBook.Web.Api.Providers
             context.Request.Context.Authentication.SignIn(cookiesIdentity);
         }
 
-        public override Task TokenEndpoint(OAuthTokenEndpointContext context)
+        public override System.Threading.Tasks.Task TokenEndpoint(OAuthTokenEndpointContext context)
         {
             foreach (KeyValuePair<string, string> property in context.Properties.Dictionary)
             {
                 context.AdditionalResponseParameters.Add(property.Key, property.Value);
             }
 
-            return Task.FromResult<object>(null);
+            return System.Threading.Tasks.Task.FromResult<object>(null);
         }
 
-        public override Task ValidateClientAuthentication(OAuthValidateClientAuthenticationContext context)
+        public override System.Threading.Tasks.Task ValidateClientAuthentication(OAuthValidateClientAuthenticationContext context)
         {
             // Resource owner password credentials does not provide a client ID.
             if (context.ClientId == null)
@@ -68,10 +68,10 @@ namespace MVC4ServicesBook.Web.Api.Providers
                 context.Validated();
             }
 
-            return Task.FromResult<object>(null);
+            return System.Threading.Tasks.Task.FromResult<object>(null);
         }
 
-        public override Task ValidateClientRedirectUri(OAuthValidateClientRedirectUriContext context)
+        public override System.Threading.Tasks.Task ValidateClientRedirectUri(OAuthValidateClientRedirectUriContext context)
         {
             if (context.ClientId == _publicClientId)
             {
@@ -83,7 +83,7 @@ namespace MVC4ServicesBook.Web.Api.Providers
                 }
             }
 
-            return Task.FromResult<object>(null);
+            return System.Threading.Tasks.Task.FromResult<object>(null);
         }
 
         public static AuthenticationProperties CreateProperties(string userName)

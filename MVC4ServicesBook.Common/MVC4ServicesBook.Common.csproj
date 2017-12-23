@@ -40,7 +40,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
     <Compile Include="DatabaseValueParser.cs" />
+=======
+>>>>>>> 8efa8a90410547de06a68807e5454b5c951c050b
     <Compile Include="DateTimeAdapter.cs" />
     <Compile Include="ExceptionMessageFormatter.cs" />
     <Compile Include="IDatabaseValueParser.cs" />
