@@ -5,6 +5,7 @@ namespace MVC4ServicesBook.Web.Common
 {
     public class CurrentSessionContextAdapter:ICurrentSessionContextAdapter
     {
+
         public bool HasBind(ISessionFactory sessionFactory)
         {
             return CurrentSessionContext.HasBind(sessionFactory);

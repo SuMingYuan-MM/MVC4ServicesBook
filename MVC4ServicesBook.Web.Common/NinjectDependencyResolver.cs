@@ -1,30 +1,31 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Security.Cryptography;
-using System.Web;
+using System.Text;
+using System.Threading.Tasks;
 using System.Web.Http.Dependencies;
 using Ninject;
 
-namespace MVC4ServicesBook.Web.Api
+namespace MVC4ServicesBook.Web.Common
 {
-    public class NinjectDependencyResolver:IDependencyResolver
+    public class NinjectDependencyResolver : IDependencyResolver
     {
         private readonly IKernel _container;
-
-        public IKernel Container
-        {
-            get { return _container; }
-        }
+        public IKernel Container { get {return _container; } }
 
         public NinjectDependencyResolver(IKernel container)
         {
             _container = container;
         }
-        
+
         public IDependencyScope BeginScope()
         {
             return this;
+        }
+
+        public void Dispose()
+        {
+            // noop;
         }
 
         public object GetService(Type serviceType)
@@ -35,11 +36,6 @@ namespace MVC4ServicesBook.Web.Api
         public IEnumerable<object> GetServices(Type serviceType)
         {
             return _container.GetAll(serviceType);
-        }
-
-        public void Dispose()
-        {
-            //noop
         }
     }
 }
