@@ -65,6 +65,7 @@ namespace MVC4ServicesBook.Web.Api
             container.Bind<IActionTransactionHelper>().To<ActionTransactionHelper>();
 
 
+
             throw new NotImplementedException();
         }
 
