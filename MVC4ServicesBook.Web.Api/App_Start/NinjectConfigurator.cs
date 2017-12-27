@@ -14,6 +14,7 @@ using NHibernate;
 using NHibernate.Context;
 using Ninject.Activation;
 using MVC4ServicesBook.Web.Common;
+using MVC4ServicesBook.Web.Common.Security;
 
 #pragma warning disable 1587
 
@@ -64,7 +65,8 @@ namespace MVC4ServicesBook.Web.Api
             container.Bind<IActionExceptionHandler>().To<ActionExceptionHandler>();
             container.Bind<IActionTransactionHelper>().To<ActionTransactionHelper>();
 
-
+            container.Bind<IUserManager>().To<UserManager>();
+            container.Bind<IMembershipInfoProvider>().To<MembershipAdapter>();
 
             throw new NotImplementedException();
         }
