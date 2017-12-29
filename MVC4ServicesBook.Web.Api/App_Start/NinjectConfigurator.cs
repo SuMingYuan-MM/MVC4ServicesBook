@@ -1,15 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Principal;
+using System.Threading;
 using System.Web;
 using System.Web.Http;
 using FluentNHibernate.Cfg.Db;
 using log4net;
 using MVC4ServicesBook.Common;
+using MVC4ServicesBook.Data;
 using MVC4ServicesBook.Web.Api.HttpFetchers;
 using Ninject;
 using Ninject.Web.Common;
 using MVC4ServicesBook.Data.SqlServer;
+using MVC4ServicesBook.Web.Api.TypeMappers;
 using NHibernate;
 using NHibernate.Context;
 using Ninject.Activation;
@@ -67,8 +71,24 @@ namespace MVC4ServicesBook.Web.Api
 
             container.Bind<IUserManager>().To<UserManager>();
             container.Bind<IMembershipInfoProvider>().To<MembershipAdapter>();
+            container.Bind<ICategoryMapper>().To<CategoryMapper>();
+            container.Bind<IPriorityMapper>().To<PriorityMapper>();
+            container.Bind<IStatusMapper>().To<StatusMapper>();
+            container.Bind<ITaskMapper>().To<TaskMapper>();
 
-            throw new NotImplementedException();
+            container.Bind<ISqlCommandFactory>().To<SqlCommandFactory>();
+            container.Bind<IUserRepository>().To<UserRepository>();
+
+            container.Bind<IUserSession>().ToMethod(CreateUserSession).InRequestScope();
+        }
+
+        /// <summary>
+        /// Used to fetch the current thread's principal as 
+        /// an <see cref="IUserSession"/> object.
+        /// </summary>
+        private IUserSession CreateUserSession(IContext arg)
+        {
+            return new UserSession(Thread.CurrentPrincipal as GenericPrincipal);
         }
 
         /// <summary>

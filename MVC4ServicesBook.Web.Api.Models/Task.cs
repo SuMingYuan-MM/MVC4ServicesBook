@@ -18,5 +18,6 @@ namespace MVC4ServicesBook.Web.Api.Models
         public Status Status { get; set; }
         public List<Link> Links { get; set; }
         public List<User> Assignees { get; set; }
+        public DateTime CreatedDate { get; set; }
     }
 }
